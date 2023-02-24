@@ -1,0 +1,32 @@
+## First_method: Direct IP connection to the Internet
+
+1. sudo su
+2. ifconfig
+3. sudo nano /etc/netplan/*.yaml
+
+auto enp0s3
+  iface enp0s3 inet static
+  address 10.0.2.15
+  netmask 255.255.255.0
+  gateway 10.0.2.255
+  
+ 4. sudo ifup /etc/netplan/*.yaml
+ 5. ping google.com
+ 
+ ## Second_method: Connection to NAT
+ 
+ 1. ifconfig
+ 2. sudo nano /etc/netplan/*.yaml
+ 
+ auto enp0s3
+ iface enp0s3 inet dhcp
+ 
+ 3. Change in virtual machine setting connection to NAT
+ 4. sudo iptables -t nat -A POSTROUTING -o <host_interface> -j MASQUERADE
+ 5. ping google.com
+ 
+ #Third_method: Proxy
+ 
+ 1. Search in browser: Free proxy servers. In my example I use this site: https://spys.one/en/
+ 2. In Linux terminal: export http_proxy=http:// 199.5.133.194:80
+ 3. ping google.com
