@@ -21,3 +21,24 @@ It`s our final project (Operating System Concepts). Team members: Myrzakhanov Ab
 # 2.3 Connection Proxy
 ![image](https://user-images.githubusercontent.com/126179639/221141477-cab2f131-b4f1-4eb2-8049-7a867286e8ab.png)
 ![image](https://user-images.githubusercontent.com/126179639/221141494-64cf7ad1-df4a-4241-8648-792a251fd8d3.png)
+
+# Third_task
+
+## Creating/Installing Kernel
+
+![image](https://user-images.githubusercontent.com/126179639/221340237-444f633a-0a64-4d36-af3f-6a9d1dbb3dd8.png)
+![image](https://user-images.githubusercontent.com/126179639/221340241-867383aa-3a91-444e-a51d-a56519dbccb1.png)
+![image](https://user-images.githubusercontent.com/126179639/221340245-d6e8ed51-58ee-4c98-8937-e681bd90fc60.png)
+![image](https://user-images.githubusercontent.com/126179639/221340247-fee192e2-e290-4e28-9b19-2e331f7da8cd.png)
+
+## Writing our Hello world.c and Makefile for compile this code
+
+![image](https://user-images.githubusercontent.com/126179639/221340272-2945f038-8307-434d-8989-be42508c7ffa.png)
+![image](https://user-images.githubusercontent.com/126179639/221340275-f160f86f-f307-46e1-8487-9ad40ace959a.png)
+![image](https://user-images.githubusercontent.com/126179639/221340283-3bb1a01f-137f-46e6-8c28-8ae5933cec75.png)
+
+## Writing cmdline arguments get and Makefile for compile this code
+
+![image](https://user-images.githubusercontent.com/126179639/221340295-b760cf24-5658-441f-ac1d-181c2a4d5229.png)
+![image](https://user-images.githubusercontent.com/126179639/221340301-a32c4e9e-0f38-41ad-aa91-f0076a175852.png)
+![image](https://user-images.githubusercontent.com/126179639/221340304-ef32447e-480c-4723-bf53-ab25f5bb986b.png)
