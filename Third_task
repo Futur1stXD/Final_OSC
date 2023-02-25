@@ -1,0 +1,85 @@
+## Third task creating Hello world
+
+## 1.1 Hello.c
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Futur1st");
+MODULE_DESCRIPTION("Myrzakhanov Abylaykhan, Tuleshev Turan, Turan Miras");
+
+static __init hello_init(void) {
+	printk(KERN_INFO "Hello World! \n");
+	return 0;
+}
+
+static void __exit hello_cleanup(void){
+	printk(KERN_INFO "Cleaning up the module");
+}
+
+module_init(hello_init);
+module_exit(hello_cleanup);
+
+## 1.2 Makefile compiler
+
+
+obj-m += hello.o
+
+all:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+clean:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+## 2 Creating CMD line arguments get
+
+## 2.1 cmdline.c
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/intit.h>
+
+MODULE_LICENSE( GPL");
+MODULE_AUTHOR( "Futurist”);
+MODULE_DESCRIPTION( "Myrzakhanov Abylaykhan, Tuleshev Turan, Turan Miras");
+
+static char *name;
+
+static int myInt = 0;
+
+static int myArr[2] = {1, -1};
+static int myArrCnt = 2;
+
+module_param(name, charp, 0644);
+MODULE_PARM_DESC(name, “Name of person:’);
+module_param(myInt, int, 0644);
+MODULE_PARM_DESC(myInt, "An Integer to print:");
+module_param_array(myArr, int, &myArrCnt, 0644);
+
+static int __init start(void){
+        printk(KERN_INFO "Hello, %s! \n", name);
+        printk(KERN_INFO “Value of Integer is: %d \n", myInt);
+        return 0;
+
+}
+
+static void __exit stop(void) {
+        printk(KERN_INFO “Stoping...");
+
+}
+
+module_init(start);
+module_exit(stop);
+
+## 2.2 Creating Makefile for compile this file
+
+obj-m += cmdline.o
+
+all:
+
+        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+clean:
+
+        make -C /lib/modules/&(shell uname -r)/build M=$(PWD) clean
